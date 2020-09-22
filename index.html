@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social List</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Social List</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTab"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTab">
+        <ul class="navbar-nav nav mr-auto" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" href="#all-user" data-toggle="tab" id="all-user-tab">All User<span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#friends" data-toggle="tab" id="friends-tab">Friends</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="m-3">
+
+      <div class="tab-content container">
+        <div class="tab-pane active" id="all-user" role="tabpanel" aria-labelledby="all-user-tab">
+          <div class="row">
+            <h3 class="title">All Users</h3>
+          </div>
+          <!-- Search -->
+          <div class="row">
+            <form class="form-inline mt-3 mb-2 col" id="all-user-filter-form">
+              <label class="my-1 mr-2 sr-only" for="">Search Property</label>
+              <select class="filter-property custom-select my-1 mr-sm-2" id="all-user-filter-property" value="name">
+                <option selected value="name">Name</option>
+                <option value="age">Age</option>
+                <option value="gender">Gender</option>
+                <option value="region">Region</option>
+              </select>
+              <label class="my-1 mr-2 sr-only" for="all-user-search-bar">Search input</label>
+              <input class="form-control mr-sm-2 search-bar" type="search" placeholder="Search" aria-label="Search"
+                id="all-user-search-bar">
+            </form>
+          </div>
+
+          <!-- Filter conditions -->
+          <div class="row mb-5 filter-parent-container" style="display:none">
+            <div class="col filter-container" id="all-user-filter-conditions">
+              <span>Filtering :</span>
+              <!-- render by js -->
+              <button class="filter-clear-all-btn delete-btn">X</button>
+            </div>
+          </div>
+
+          <!-- Data Panel -->
+          <div class="row" id="all-user-data-panel">
+            <!-- Render user list -->
+          </div>
+          <!-- paginator -->
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center" id="all-user-paginator">
+              <!-- render paginator by js -->
+            </ul>
+          </nav>
+        </div>
+        <div class="tab-pane" id="friends" role="tabpanel" aria-labelledby="friends-tab">
+          <div class="row">
+            <h3 class="title">Friends</h3>
+          </div>
+          <!-- Search -->
+          <div class="row">
+            <form class="form-inline mt-3 mb-2 col" id="friends-filter-form">
+              <label class="my-1 mr-2 sr-only" for="">Search Property</label>
+              <select class="filter-property custom-select my-1 mr-sm-2" id="friends-filter-property">
+                <option selected value="name">Name</option>
+                <option value="age">Age</option>
+                <option value="gender">Gender</option>
+                <option value="region">Region</option>
+              </select>
+              <label class="my-1 mr-2 sr-only" for="friends-search-bar">Search input</label>
+              <input class="form-control mr-sm-2 search-bar" type="search" placeholder="Search" aria-label="Search"
+                id="friends-search-bar">
+            </form>
+          </div>
+
+          <!-- Filter conditions -->
+          <div class="row mb-5 filter-parent-container" style="display:none">
+            <div class="col filter-container" id="friends-filter-conditions">
+              <span>Filtering :</span>
+              <!-- filter conditions render by js -->
+              <button class="filter-clear-all-btn delete-btn">X</button>
+            </div>
+          </div>
+          <!-- Data Panel -->
+          <div class="row" id="friends-data-panel">
+            <!-- Render user list -->
+          </div>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center" id="friends-paginator">
+              <!-- render paginator by js -->
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="user-modal" tabindex="-1" aria-labelledby="user-modal-name" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="user-modal-name">Guillaume Vincent</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="container">
+              <div class="modal-body row align-items-center justify-content-center">
+                <div class="col col-sm-4">
+                  <div id="user-modal-avatar" class="d-flex justify-content-center align-items-center">
+                    <img src="" alt="User Avatar" class="rounded-circle">
+                  </div>
+                </div>
+
+                <ul class="list-unstyled col col-sm-8 mb-0">
+                  <li id="user-modal-gender">Gender: male</li>
+                  <li id="user-modal-age">Age: 25</li>
+                  <li id="user-modal-region">Region: CH</li>
+                  <li id="user-modal-birthday">Birthday: 1995-05-05</li>
+                  <li id="user-modal-email">Email: guillaume.vincent@example.com</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button class="add-friend-btn" data-id="" id="user-modal-add-friend-btn">
+                <i class="icon add-friend-btn fas" data-id=""></i>
+              </button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>

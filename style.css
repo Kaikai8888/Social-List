@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+}
+
+.title {
+  margin-left: 20px;
+}
+
+/* Filter Form */
+/* .filter-parent-container {
+  display: none;
+} */
+
+.filter-property {
+  width: 50px;
+  border-radius: 30px !important;
+}
+
+.search-bar {
+  width: 200px !important;
+  border-radius: 30px !important;
+}
+
+.filter-btn {
+  border-radius: 30px !important; 
+  font-weight: bolder;
+}
+
+/* Filter Conditions */
+.filter-container {
+  width: 100%;
+  height: auto;
+  color: #17a2b8;
+  font-weight: bolder;
+}
+
+.filter-wrapper {
+  background: #1ABFD9;
+  color: white;
+  font-size: 0.8rem;
+  padding: 3px 5px;
+  line-height: 1;
+  margin-left: 5px;
+  border-radius: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.filter-wrapper:hover{
+  color: #1ABFD9;
+  background: white;
+  border: 1px solid #1ABFD9;
+  padding: 5px 7px;
+  font-size: 1rem;
+}
+
+/* .filter-item {
+  display: -webkit-inline-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  max-width: 110px;
+  min-width: 70px;
+} */
+
+.delete-btn {
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  line-height: 16px;
+  padding: 1px;
+  margin-left: 1px;
+  border-radius: 50%; 
+  outline: none;
+  border: none;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #1ABFD9;
+}
+
+.filter-wrapper:hover .delete-btn {
+  color: #1ABFD9;
+}
+
+.filter-wrapper:hover .delete-btn:hover {
+  color: white;
+}
+
+.delete-btn:focus {
+  border:none;
+  outline: none;
+}
+
+.filter-clear-all-btn {
+  color: #1ABFD9
+}
+
+.filter-clear-all-btn:hover {
+  color: white;
+}
+
+/* User card */
+.user {
+  border:1px solid #ced4da;
+  border-radius: 5px;
+  min-height: 178px !important;
+  width: 150px;
+}
+
+.user .name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+
+/* avatar */
+.avatar-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+
+
+.avatar-wrapper:hover {
+  margin-top: -20px;
+  margin-bottom: 30px;
+  transition-duration: 600ms;
+  transition-property: margin-top, margin-bottom;
+}
+
+.avatar-wrapper:hover::after {
+  content:"";
+  width: 40px;
+  height: 3px;
+  background: #aaaaaa;
+  border-radius: 100%;
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  z-index: 1;
+  box-shadow: 0 0 5px #333333;
+  transition-duration: 600ms;
+  transition-property: width, height, bottom;
+}
+
+/* add friend btn */
+
+
+button.add-friend-btn, button.add-friend-btn:focus {
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+button.add-friend-btn:hover {
+  font-size: 1.3rem;
+  width: 35px;
+  height: 35px;
+}
+
+button.add-friend-btn.friend-btn,
+button.add-friend-btn.plus-btn:hover
+ {
+  color: white;
+  background: LightSeaGreen;
+}
+
+
+button.add-friend-btn.plus-btn,
+button.add-friend-btn.friend-btn:hover {
+  color: gray;
+  background: #ced4da;
+}
+
+
+/* modal add friend button */
+#user-modal-add-friend-btn {
+  position: unset;
+}
+
+#user-modal button.close {
+  outline: none;
+  border: none;
+}
+
+.pagination a {
+  color: #1ABFD9;
+}
