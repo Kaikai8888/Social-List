@@ -2,6 +2,8 @@
 
 A simple web application for searching and managing friends. Get connected with potential friends now.
 
+https://kaikai8888.github.io/Social-List/
+
 ## Features
 
 - listing users and friends respectively in All users and Friends tag
